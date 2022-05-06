@@ -5,8 +5,14 @@
 .LandingPage {
     text-align: center;
     margin-top: 20%;
+    background-image: url("https://images-na.ssl-images-amazon.com/images/I/51rM4dvgyPL.jpg");
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position: center;
+    background-size: auto;
 }
 .LoginPage {
     text-align: center;
     margin-top: 20%;
 }
+
