@@ -26,11 +26,15 @@ export default function SneakerPage(props) {
         getSneaker()
     }, [params.sneakerId])    
     
-    console.log(sneaker)
+
     return(
         <div>
-            <img src={sneaker.image}>
-            </img><p key={sneaker.name}></p>
+            {sneaker ? // if sneaker exist display image and name if not return null
+                (<div>
+                    <img src={sneaker.image}></img>
+                    <p>{sneaker.name}</p>
+                </div>)
+            : null}
         </div>
     )
 }

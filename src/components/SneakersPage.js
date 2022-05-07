@@ -2,12 +2,12 @@ import { useState, useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
 
 
-export default function SneakersPage(props) {
+export default function SneakersPage(props) { // uses props to pass it to jsx code
     // hooks below 
     const [ sneakers, setSneakers]= useState(null);
     const [ name, setName]= useState('Nike');
     const [ image, setImage]= useState('https://media.istockphoto.com/photos/great-sneaker-picture-id1079117394?s=612x612');
-    const navigate = useNavigate();
+    const navigate = useNavigate(); // lets you navigate to another page
 
     const getSneakers = async () => {
         const response = await fetch(`${process.env.REACT_APP_BASE_URL}sneakers/user/${props.user._id}`,{ // makes api call
@@ -20,9 +20,9 @@ export default function SneakersPage(props) {
         const data = await response.json()
         setSneakers(data) // sets the sneakers 
     }
-
+    // use effect only runs when the deps have changed 
     useEffect(() => {
-        if (!props.user) {
+        if (!props.user) { // if user doesnt exist it sends you back to home page
             navigate("/");
         }
         getSneakers();
@@ -62,11 +62,13 @@ export default function SneakersPage(props) {
             <button  onClick={handleSubmit}>Submit</button>
         </div>
         <ul>
-            {sneakers ? sneakers.map((sneakers) => {
-                return <li key={sneakers._id}>
-                    <img src={sneakers.image}></img>
-                    <Link to={`/sneakers/${sneakers._id}`}>Name:{sneakers.name}</Link>
-                    <Link to={`/sneakers/${sneakers._id}/edit`}>edit/delete</Link>
+            {sneakers ? sneakers.map((sneaker) => {
+                console.log(sneaker._id)
+                return <li key={sneaker._id}>
+                    <img src={sneaker.image}></img>
+                    <Link to={`/sneakers/${sneaker._id}`}>Name:{sneaker.name}</Link>
+                    <br></br>
+                    <Link to={`/sneakers/${sneaker._id}/edit`}>edit/delete</Link>
                 </li>
             }): null}
         </ul>

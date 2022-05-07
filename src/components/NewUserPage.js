@@ -1,6 +1,5 @@
 import { useState } from "react"
-import LoginPage from "./LoginPage"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom" // useNavigate is a function from the module react router dom 
 
 
 export default function NewUserPage(props) {
@@ -12,7 +11,7 @@ export default function NewUserPage(props) {
 
 
 
-    const handleChangeName = (event) => {
+    const handleChangeName = (event) => { // anytime any characters are added to input it updates 
         setName(event.target.value)
     }
     const handleChangeEmail = (event) => {
@@ -25,21 +24,21 @@ export default function NewUserPage(props) {
         // as user validate if correct name,email,password // if not turn input red // nice to have 
         const user = { name, email, password };
         
-        const response = await fetch(`${process.env.REACT_APP_BASE_URL}user`,{ // makes api call
-            method: "POST",
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}user`,{ // makes api call // dot.env points to local host until deployed to Heroku
+            method: "POST", // set to POST since its a post route
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json', // sending json data
             },
-            body: JSON.stringify(user)
+            body: JSON.stringify(user) // transforms user object into json data
         }) 
     
         const data = await response.json()
         props.setUser(data) // sets the user 
         navigate("/sneakers");
     }
-    
+    // jsx or html data
     return(
-        <div className="NewUserP">
+        <div className="NewUserP"> 
             <h1>Name</h1>
             <input value={name} placeholder="Enter Name" type='text' onChange={handleChangeName}></input>
             <h1>Email</h1>

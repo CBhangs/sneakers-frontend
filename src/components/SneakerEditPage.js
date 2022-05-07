@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 export default function SneakerEditPage(props) {
     const params = useParams();
     const [ sneaker, setSneaker]= useState(null)
+    const [ name, setName]= useState('');
+    const [ image, setImage]= useState('');
     const navigate = useNavigate();
 
 
@@ -16,6 +18,8 @@ export default function SneakerEditPage(props) {
         }) 
     
         const data = await response.json()
+        setName(data.name) // brings info from database to current sneaker 
+        setImage(data.image)
         setSneaker(data) // sets the sneaker 
     }
 
@@ -24,12 +28,52 @@ export default function SneakerEditPage(props) {
             navigate("/");
         }
         getSneaker()
-    }, [params.sneakerId])    
+    }, [params.sneakerId])   
+
+    const handleSubmit = async () => {
+        // as user validate if correct name,email,password // if not turn input red // nice to have 
+        const sneaker = { name, image };
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}sneaker/${params.sneakerId}` ,{ // makes api call
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(sneaker)
+        }) 
     
-    console.log(sneaker)
+        const data = await response.json()
+        navigate("/sneakers");
+    }
+    const handleDelete = async () => { // deletes the sneaker 
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}sneaker/${params.sneakerId}` ,{ // makes api call
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(sneaker)
+        }) 
+    
+        const data = await response.json()
+        navigate("/sneakers");
+    }
+    
+    
+    const handleChangeName = (event) => {
+        setName(event.target.value)
+    }
+    
+    const handleChangeImgUrl = (event) => {
+        setImage(event.target.value)
+    }
+    
     return(
         <div>
-            SneakerEditPage {params.sneakerId}
+            <h1>sneaker name</h1>
+            <input value={name} placeholder="Enter Name" type='text' onChange={handleChangeName}></input>
+            <h1>image url</h1>
+            <input value={image} aceholder="Enter image url" type='text' onChange={handleChangeImgUrl}></input>
+            <button  onClick={handleSubmit}>Submit</button>
+            <button className="DeleteButton" onClick={handleDelete}>Delete</button>
         </div>
     )
 }
