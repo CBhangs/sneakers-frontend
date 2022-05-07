@@ -55,9 +55,9 @@ export default function SneakersPage(props) { // uses props to pass it to jsx co
     return (
     <div>
         <div className="createSneakersCard">
-            <h1>sneaker name</h1>
+            <h1>Sneaker name</h1>
             <input value={name} placeholder="Enter Name" type='text' onChange={handleChangeName}></input>
-            <h1>image url</h1>
+            <h1>Image url</h1>
             <input value={image} aceholder="Enter image url" type='text' onChange={handleChangeImgUrl}></input>
             <button  onClick={handleSubmit}>Submit</button>
         </div>
@@ -66,6 +66,7 @@ export default function SneakersPage(props) { // uses props to pass it to jsx co
                 console.log(sneaker._id)
                 return <li key={sneaker._id}>
                     <img src={sneaker.image}></img>
+                    <br></br>
                     <Link to={`/sneakers/${sneaker._id}`}>Name:{sneaker.name}</Link>
                     <br></br>
                     <Link to={`/sneakers/${sneaker._id}/edit`}>edit/delete</Link>

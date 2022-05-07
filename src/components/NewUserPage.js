@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom" // useNavigate is a function from
 export default function NewUserPage(props) {
     // hooks below 
     const [ name, setName]= useState('Cory')
-    const [ email, setEmail]= useState('email@fake.com')
+    const [ email, setEmail]= useState('email@email.com')
     const [ password, setPassword]= useState('password') 
     const navigate = useNavigate();
 
@@ -39,13 +39,13 @@ export default function NewUserPage(props) {
     // jsx or html data
     return(
         <div className="NewUserP"> 
-            <h1>Name</h1>
+            <h1 className="Name">Name</h1>
             <input value={name} placeholder="Enter Name" type='text' onChange={handleChangeName}></input>
             <h1>Email</h1>
             <input value={email} placeholder="Enter Email" type='text' onChange={handleChangeEmail}></input>
             <h1>Password</h1>
             <input value={password} placeholder="Create Password" type='text' onChange={handleChangePassword}></input>
-            <button  onClick={handleSubmit}>Submit</button>
+            <button className="NewUserSubmit" onClick={handleSubmit}>Submit</button>
         </div>
     )
 }

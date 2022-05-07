@@ -1,21 +1,50 @@
-body {
-    /* background-image: url("https://images-na.ssl-images-amazon.com/images/I/51rM4dvgyPL.jpg");
-    background-repeat: no-repeat;
-    height: 100%;
-    background-position: center;
-    background-size: auto; */
-
-}
 .NewUserP {
     text-align: center;
     margin-top: 20%;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .LandingPage {
     text-align: center;
     margin-top: 20%;
 }
+.LandingPageHeader {
+    font-size:x-large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 .LoginPage {
     text-align: center;
     margin-top: 20%;
+}
+.NewUser {
+    border-radius: 10px;
+    background-color: bisque;
+    font-size: 20px;
+}
+.NewUserSubmit {
+    border-radius: 10px;
+    background-color: bisque;
+    font-size: 18px;
+}
+.Login {
+    border-radius: 10px;
+    background-color: bisque;
+    font-size: 20px;
+}
+.createSneakersCard {
+    text-align: center;
+    margin-top: 20%;
+    font-size:x-large;
+}
+.SneakerDeleteButton {
+    background-color: red;
+}
+.SneakerEditPage {
+    text-align: center;
+    margin-top: 20%;
+}
+.SneakerPage {
+    text-align: center;
+    margin-top: 10%;
 }
 

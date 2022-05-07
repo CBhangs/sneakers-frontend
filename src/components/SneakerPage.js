@@ -28,7 +28,7 @@ export default function SneakerPage(props) {
     
 
     return(
-        <div>
+        <div className="SneakerPage">
             {sneaker ? // if sneaker exist display image and name if not return null
                 (<div>
                     <img src={sneaker.image}></img>

@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 
 export default function LoginPage(props) {
-    const [ email, setEmail]= useState('e@meail.com')
+    const [ email, setEmail]= useState('email@email.com')
     const [ password, setPassword]= useState('password')
     const navigate = useNavigate();
 

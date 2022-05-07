@@ -67,13 +67,17 @@ export default function SneakerEditPage(props) {
     }
     
     return(
-        <div>
-            <h1>sneaker name</h1>
+        <div className="SneakerEditPage">
+            <h1>Edit Sneaker name</h1>
             <input value={name} placeholder="Enter Name" type='text' onChange={handleChangeName}></input>
-            <h1>image url</h1>
+            <h1>Edit image url</h1>
             <input value={image} aceholder="Enter image url" type='text' onChange={handleChangeImgUrl}></input>
+            <br></br>
+            <br></br>
             <button  onClick={handleSubmit}>Submit</button>
-            <button className="DeleteButton" onClick={handleDelete}>Delete</button>
+            <br></br>
+            <br></br>
+            <button className="SneakerDeleteButton" onClick={handleDelete}>Delete</button>
         </div>
     )
 }
