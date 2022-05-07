@@ -35,8 +35,10 @@ export default function LoginPage(props) {
             </header>
             <div>
                 <input value={email} placeholder="Enter Email" type='text' onChange={handleChangeEmail}></input>
+                <br></br>
                 <input value={password} placeholder="Enter Password" type='text' onChange={handleChangePassword}></input>
-                <button  onClick={handleSubmit}>Submit</button>
+                <br></br>
+                <button className="LoginUser" onClick={handleSubmit}>Submit</button>
             </div>
         </div>
     )

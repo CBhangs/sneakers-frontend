@@ -9,7 +9,7 @@
     margin-top: 20%;
 }
 .LandingPageHeader {
-    font-size:x-large;
+    font-size:large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .LoginPage {
@@ -19,7 +19,7 @@
 .NewUser {
     border-radius: 10px;
     background-color: bisque;
-    font-size: 20px;
+    font-size: 15px;
 }
 .NewUserSubmit {
     border-radius: 10px;
@@ -29,11 +29,11 @@
 .Login {
     border-radius: 10px;
     background-color: bisque;
-    font-size: 20px;
+    font-size: 15px;
 }
 .createSneakersCard {
     text-align: center;
-    margin-top: 20%;
+    margin-top: 10%;
     font-size:x-large;
 }
 .SneakerDeleteButton {
@@ -47,4 +47,10 @@
     text-align: center;
     margin-top: 10%;
 }
+.LoginUser {
+    border-radius: 10px;
+    background-color: bisque;
+    font-size: 15px;
+}
+
 

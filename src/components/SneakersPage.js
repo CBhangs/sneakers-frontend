@@ -5,8 +5,8 @@ import { Link, useNavigate } from "react-router-dom"
 export default function SneakersPage(props) { // uses props to pass it to jsx code
     // hooks below 
     const [ sneakers, setSneakers]= useState(null);
-    const [ name, setName]= useState('Nike');
-    const [ image, setImage]= useState('https://media.istockphoto.com/photos/great-sneaker-picture-id1079117394?s=612x612');
+    const [ name, setName]= useState('Jordan 9 Space Jam');
+    const [ image, setImage]= useState('https://sneakerbardetroit.com/wp-content/uploads/2016/11/air-jordan-9-og-space-jam-available-2.jpg');
     const navigate = useNavigate(); // lets you navigate to another page
 
     const getSneakers = async () => {

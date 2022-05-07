@@ -7,7 +7,7 @@ export default function LandingPage() {
     return (
         <div className="LandingPage">
             <header className="LandingPageHeader">
-                <h1>Sneaker Vault</h1>
+                <h1>Vault</h1>
                 <h2>Keep track of your collection </h2>
             </header>
             <h1>
