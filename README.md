@@ -1,4 +1,4 @@
-## Unit 3 Project
+## SEI Project 3
 
 ### Sneaker Vault 
 
