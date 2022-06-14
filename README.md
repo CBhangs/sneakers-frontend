@@ -1,6 +1,6 @@
-## Unit 3 Project
+## SEI Project 3
 
-### Sneaker Vault 
+### Vault 
 
  #This is a single page application using a full backend and frontend. The purpose of this app is to keep track and store all the sneakers in your collection. The application lets you save the name and image of any sneaker.
  
