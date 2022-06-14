@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom" // useNavigate is a function from
 
 export default function NewUserPage(props) {
     // hooks below 
-    const [ name, setName]= useState('Cory')
-    const [ email, setEmail]= useState('email@email.com')
-    const [ password, setPassword]= useState('password') 
+    const [ name, setName]= useState('')
+    const [ email, setEmail]= useState('')
+    const [ password, setPassword]= useState('') 
     const navigate = useNavigate();
 
 

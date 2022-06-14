@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-// import LoginPage from "./LoginPage";
-// import NewUserPage from "./NewUserPage";
 
 
 export default function LandingPage() {
@@ -16,9 +14,6 @@ export default function LandingPage() {
             <h1>
                 <button className="Login"><Link to='/user/login'>Login</Link></button>
             </h1>
-            <p>
-                {/* <a href="https://www.linkedin.com/in/coryhangan"></a> */}
-            </p>
         </div>
     )
 }

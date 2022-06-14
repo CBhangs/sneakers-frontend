@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function LoginPage(props) {
     const [ email, setEmail]= useState('email@email.com')
-    const [ password, setPassword]= useState('password')
+    const [ password, setPassword]= useState('')
     const navigate = useNavigate();
 
     const handleChangeEmail = (event) => {
@@ -35,7 +35,6 @@ export default function LoginPage(props) {
             </header>
             <div>
                 <input value={email} placeholder="Enter Email" type='text' onChange={handleChangeEmail}></input>
-                <br></br>
                 <input value={password} placeholder="Enter Password" type='text' onChange={handleChangePassword}></input>
                 <br></br>
                 <button className="LoginUser" onClick={handleSubmit}>Submit</button>

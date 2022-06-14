@@ -5,8 +5,8 @@ import { Link, useNavigate } from "react-router-dom"
 export default function SneakersPage(props) { // uses props to pass it to jsx code
     // hooks below 
     const [ sneakers, setSneakers]= useState(null);
-    const [ name, setName]= useState('Jordan 9 Space Jam');
-    const [ image, setImage]= useState('https://sneakerbardetroit.com/wp-content/uploads/2016/11/air-jordan-9-og-space-jam-available-2.jpg');
+    const [ name, setName]= useState('');
+    const [ image, setImage]= useState('');
     const navigate = useNavigate(); // lets you navigate to another page
 
     const getSneakers = async () => {
@@ -53,23 +53,23 @@ export default function SneakersPage(props) { // uses props to pass it to jsx co
     }
     
     return (
-    <div>
+    <div className="SneakersBody">
         <div className="createSneakersCard">
             <h1>Sneaker name</h1>
             <input value={name} placeholder="Enter Name" type='text' onChange={handleChangeName}></input>
             <h1>Image url</h1>
-            <input value={image} aceholder="Enter image url" type='text' onChange={handleChangeImgUrl}></input>
-            <button  onClick={handleSubmit}>Submit</button>
+            <input value={image} placeholder="Enter image url" type='text' onChange={handleChangeImgUrl}></input>
+            <button className="sneakerSubmit" onClick={handleSubmit}>Submit</button>
         </div>
-        <ul>
+        <ul className="cardContainer">
             {sneakers ? sneakers.map((sneaker) => {
                 console.log(sneaker._id)
-                return <li key={sneaker._id}>
-                    <img src={sneaker.image}></img>
-                    <br></br>
-                    <Link to={`/sneakers/${sneaker._id}`}>Name:{sneaker.name}</Link>
-                    <br></br>
-                    <Link to={`/sneakers/${sneaker._id}/edit`}>edit/delete</Link>
+                return <li className="card" key={sneaker._id}>
+                    <img width="350px" src={sneaker.image}></img>
+                    <div className="cardContent">
+                        <Link to={`/sneakers/${sneaker._id}`}>Name:{sneaker.name}</Link>
+                        <Link to={`/sneakers/${sneaker._id}/edit`}>Edit/Delete</Link>
+                    </div>
                 </li>
             }): null}
         </ul>
